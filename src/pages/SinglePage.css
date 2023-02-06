@@ -1,0 +1,30 @@
+.wripper{
+    display: flex;
+}
+.button{
+    margin-left: 20px;
+    margin-top: 10px;
+}
+.titles{
+    width: 400px;
+}
+.postTitle{
+    color: rgb(8, 7, 7);
+}
+.genresTitle{
+    display: inline;
+    padding: 5px;
+}
+.image{
+    width: 200px;
+    padding: 20px;
+}
+.addInfo{
+    box-shadow: 2px 2px 8px rgba(54, 41, 41, 0.438);
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin-top: 15px;
+}
+.addInfoTitle{
+    margin-left: 20px;
+}
