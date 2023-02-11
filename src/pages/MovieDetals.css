@@ -1,0 +1,17 @@
+.wripperDetals{
+    padding: 20px;
+}
+.movieDetalsList{
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    padding-left: 0px;
+}
+.movieLi{
+    display: flex;
+    flex-direction: column;
+    padding-top: 8px;
+}
+.movieDetalsListFoto{
+ width: 100px;
+}

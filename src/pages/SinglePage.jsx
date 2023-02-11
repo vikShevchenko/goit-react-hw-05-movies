@@ -1,16 +1,18 @@
 import { useState, useEffect } from "react";
-import { useParams, useNavigate, NavLink} from "react-router-dom";
+import { useParams, useNavigate, NavLink, Outlet, useLocation} from "react-router-dom";
 import axios from "axios";
-import '../pages/SinglePage.css'
+import '../pages/SinglePage.css';
 
 export const SinglePage =()=> {
 
-    const [post , setPosts] = useState(null)
+    const [post , setPosts] = useState(null);
+    const [error, setError] = useState(null);
     const {id} =useParams();
 
+    const location = useLocation();
     const navigate = useNavigate();
     const goBack =()=> {
-        navigate(-1)
+      navigate(location.state)    
     }
 
  useEffect(()=> {
@@ -19,11 +21,10 @@ export const SinglePage =()=> {
     .then(data => {
       setPosts(data.data) 
     })
-    .catch(error => console.log(error))
+    .catch(error => setError(error))
     
  },[id]);
-
-   
+  
     return (
       <div>
         <button className="button" onClick={goBack}>Go Back</button>
@@ -46,19 +47,17 @@ export const SinglePage =()=> {
               <p className="genresTitle" key={genr.id}>{genr.name}</p>
             ))}
             </div>
-
           </div>
         )}
+        {error && <h3>{error}</h3>}
         <div className="addInfo">
             <h4 className="addInfoTitle">Additional information</h4>
-            {/* {console.log(post)} */}
-
             <ul>
-                <li><NavLink to='/movies/:id/cast' state={id}>Cast</NavLink></li>
-                <li><NavLink to='/movies/:id/reviews'>Reviews</NavLink></li>
+                <li><NavLink to='cast' state={id}>Cast</NavLink></li>
+                <li><NavLink to='reviews' state={id}>Reviews</NavLink></li>
             </ul>
-        </div>    
-
+        </div>  
+        <Outlet /> 
       </div>
     );
 }

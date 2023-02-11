@@ -1,15 +1,16 @@
-import React from 'react'
-import { useState, useEffect } from 'react'
-import axios from 'axios'
-import './Movies.css'
+import React from 'react';
+import { Link, useLocation  } from 'react-router-dom';
+import { useState, useEffect} from 'react';
+import axios from 'axios';
+import './Movies.css';
 
 export const Movies = () => {
 
-  const [inputText, setInputText] = useState('')
-  const [search, setSearch] = useState(null)
-  const [post, setPosts] = useState(null)
+  const [inputText, setInputText] = useState('');
+  const [search, setSearch] = useState(null);
+  const [post, setPosts] = useState(null);
+  const location = useLocation();
  
-
   const hendleSubmit =(e)=> {
     e.preventDefault();
     inputText && setSearch(inputText)
@@ -38,7 +39,7 @@ export const Movies = () => {
         <button  onClick={hendleSubmit}>Search</button>
       </form>
       <ul className='formElement'>
-      {search && post.results.map(data => <li key={data.id}>{data.title}</li>)}
+      {search && post.results.map(data => <li key={data.id}>  <Link to={`/movies/${data.id}`} state={location.pathname}>{data.title}</Link></li>)}
       </ul>
     </div>
   )
