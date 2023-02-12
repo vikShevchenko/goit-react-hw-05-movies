@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react';
 import axios from 'axios';
 import './Movies.css';
 
-export const Movies = () => {
+const Movies = () => {
   const [inputText, setInputText] = useState('');
   const [search, setSearch] = useState(null);
   const [post, setPosts] = useState(null);
@@ -55,3 +55,4 @@ export const Movies = () => {
     </div>
   );
 };
+export default Movies

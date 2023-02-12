@@ -1,20 +1,20 @@
 import { useState, useEffect } from "react";
-import { useParams, useNavigate, NavLink, Outlet, useLocation} from "react-router-dom";
+import { useParams, NavLink, Outlet } from "react-router-dom";
 import axios from "axios";
-import './SinglePage.css';
+import './MovieDetails.css';
 import PropTypes from 'prop-types';
 
-const SinglePage =()=> {
+const MovieDetails =()=> {
 
     const [post , setPosts] = useState(null);
     const [error, setError] = useState(null);
     const {id} =useParams();
 
-    const location = useLocation();
-    const navigate = useNavigate();
-    const goBack =()=> {
-      navigate(location.state)    
-    }
+    // const location = useLocation();
+    // const navigate = useNavigate();
+    // const goBack =()=> {
+    //   navigate(location.state)    
+    // }
 
  useEffect(()=> {
     axios
@@ -28,7 +28,8 @@ const SinglePage =()=> {
   
     return (
       <div>
-        <button className="button" onClick={goBack}>Go Back</button>
+        {/* onClick={goBack} */}
+        <NavLink to='/' > {'<Go Back'}</NavLink>
 
         {post && (
           <div className="wripper">
@@ -62,10 +63,10 @@ const SinglePage =()=> {
       </div>
     );
 }
-SinglePage.propTypes = {
+MovieDetails.propTypes = {
   id: PropTypes.number,
   location: PropTypes.shape({
     state: PropTypes.string
   })
 }
-export default SinglePage
+export default MovieDetails

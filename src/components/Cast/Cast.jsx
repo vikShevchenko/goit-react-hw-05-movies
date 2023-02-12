@@ -2,10 +2,10 @@ import React from 'react';
 import { useEffect, useState } from 'react';
 import { useLocation } from 'react-router-dom';
 import axios from 'axios';
-import './MovieDetals.css';
+import './Cast.css';
 import PropTypes from 'prop-types';
 
-const MovieDetals = () => {
+const Cast = () => {
   const location = useLocation();
   const [data, setData] = useState();
 
@@ -43,9 +43,9 @@ const MovieDetals = () => {
   );
 };
 
-MovieDetals.propTypes = {
+Cast.propTypes = {
   location: PropTypes.shape({
     state: PropTypes.number
   })
 }
-export default MovieDetals
+export default Cast
