@@ -3,8 +3,9 @@ import { useEffect, useState } from 'react';
 import { useLocation } from 'react-router-dom';
 import axios from 'axios';
 import './Reviews.css'
+import PropTypes from 'prop-types'
 
-export const Reviews = () => {
+const Reviews = () => {
 
   const location = useLocation()
   const [data, setData] = useState([])
@@ -39,3 +40,9 @@ export const Reviews = () => {
     </div>
   )
 }
+Reviews.propTypes = {
+  location: PropTypes.shape({
+    state: PropTypes.number
+  })
+}
+export default Reviews

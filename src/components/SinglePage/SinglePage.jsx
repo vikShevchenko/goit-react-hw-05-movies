@@ -1,9 +1,10 @@
 import { useState, useEffect } from "react";
 import { useParams, useNavigate, NavLink, Outlet, useLocation} from "react-router-dom";
 import axios from "axios";
-import '../pages/SinglePage.css';
+import './SinglePage.css';
+import PropTypes from 'prop-types';
 
-export const SinglePage =()=> {
+const SinglePage =()=> {
 
     const [post , setPosts] = useState(null);
     const [error, setError] = useState(null);
@@ -42,7 +43,7 @@ export const SinglePage =()=> {
             <h3>Overview</h3>
             <p>{post.overview}</p>
 
-            <h3>Ganres</h3>
+            <h3>Genres</h3>
             {post.genres.map(genr => (
               <p className="genresTitle" key={genr.id}>{genr.name}</p>
             ))}
@@ -61,3 +62,10 @@ export const SinglePage =()=> {
       </div>
     );
 }
+SinglePage.propTypes = {
+  id: PropTypes.number,
+  location: PropTypes.shape({
+    state: PropTypes.string
+  })
+}
+export default SinglePage
