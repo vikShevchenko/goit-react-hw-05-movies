@@ -28,3 +28,16 @@
 .addInfoTitle{
     margin-left: 20px;
 }
+
+.goBack{
+    margin-top: 5px;
+    display: block;
+    height: 30px;
+    width: 75px;
+    border: 1px solid;
+    border-radius: 5px;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    margin-left: 20px;
+}

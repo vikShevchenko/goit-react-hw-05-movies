@@ -1,14 +1,13 @@
 import { Routes, Route, NavLink, Outlet } from 'react-router-dom';
 import { lazy, Suspense } from 'react';
-//import { Home } from '../pages/Home';
-//import { Movies } from '../pages/Movies';
 import './App.css';
+import { TailSpin } from  'react-loader-spinner'
 
 const MovieDetails = lazy(() => import('../MovieDetails/MovieDetails'));
 const Cast = lazy(() => import('../Cast/Cast'));
 const Reviews = lazy(() => import('../Reviews/Reviews'));
-const Home = lazy(()=> import('../../pages/Home'));
-const Movies = lazy(()=> import('../../pages/Movies'))
+const Home = lazy(()=> import('pages/Home/Home'));
+const Movies = lazy(()=> import('pages/Movies/Movies'))
 
 function Layout() {
   return (
@@ -23,8 +22,8 @@ function Layout() {
 }
 export const App = () => {
   return (
-    <div className="container">
-      <Suspense fallback={<div>Loading...</div>}>
+    <div >
+      <Suspense className="container" fallback={<TailSpin/>}>
         <Routes>
           <Route path="/" element={<Layout />}>
             <Route index element={<Home />} />

@@ -13,6 +13,7 @@
 .active{
     color: rgb(252, 63, 63);  
 }
-/* .container{
- padding-left: 50px;
-} */
+.spin{
+    margin-top: 50px;
+    margin-left: 50px;
+}

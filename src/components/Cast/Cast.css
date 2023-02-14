@@ -3,9 +3,12 @@
 }
 .movieDetalsList{
     list-style: none;
-    display: flex;
+    display: grid;
     flex-direction: column;
     padding-left: 0px;
+    grid-template-columns: repeat(5,1fr);
+    grid-gap: 20px;
+    width: 670px;
 }
 .movieLi{
     display: flex;

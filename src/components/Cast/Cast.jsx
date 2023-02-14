@@ -1,24 +1,27 @@
 import React from 'react';
 import { useEffect, useState } from 'react';
-import { useLocation } from 'react-router-dom';
-import axios from 'axios';
+import { useParams } from 'react-router-dom';
 import './Cast.css';
 import PropTypes from 'prop-types';
+import {GetCast} from 'services/apiPack'
 
 const Cast = () => {
-  const location = useLocation();
-  const [data, setData] = useState();
 
-  useEffect(() => {
-    axios
-      .get(
-        `https://api.themoviedb.org/3/movie/${location.state}/credits?api_key=f6ffe98b5dc08916d40352e501f3317f`
-      )
-      .then(data => {
-        setData(data.data);
-      })
-      .catch(error => console.log(error));
-  }, [location.state]);
+  const [data, setData] = useState();
+  const {id} = useParams()
+
+  useEffect(()=> { 
+    async function fatchCast(){
+    try {
+      const data = await GetCast(id);
+      setData(data);
+    }catch (error){
+      console.log(error)
+    }
+   } 
+   fatchCast()
+  },[id])
+
   return (
     <div className="wripperDetals">
       MovieDetails
@@ -43,9 +46,6 @@ const Cast = () => {
   );
 };
 
-Cast.propTypes = {
-  location: PropTypes.shape({
-    state: PropTypes.number
-  })
-}
+Cast.propTypes = {id: PropTypes.number}
+
 export default Cast
