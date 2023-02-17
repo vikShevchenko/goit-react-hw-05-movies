@@ -1,12 +1,11 @@
 import { useState, useEffect } from 'react';
-import { useLocation } from 'react-router-dom';
+//import { useLocation } from 'react-router-dom';
 import { TrendingMovies } from 'services/apiPack';
 import './Home.css';
-import { Posts } from '../Posts/Posts';
+import { Posts } from '../../components/Posts/Posts';
 
 const Home = () => {
   const [posts, setPosts] = useState([]);
-  const location = useLocation();
 
   useEffect(() => {
     const fachMovies = async () => {
@@ -23,7 +22,7 @@ const Home = () => {
   return (
     <div className="wrapper">
       <h1>Trending today</h1>
-      <Posts posts={posts} location={location} />
+      <Posts posts={posts} />
     </div>
   );
 };

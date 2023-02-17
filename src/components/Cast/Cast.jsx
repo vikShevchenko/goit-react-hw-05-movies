@@ -34,7 +34,7 @@ const Cast = () => {
                 src={
                   actor.profile_path
                     ? ` https://image.tmdb.org/t/p/w500/${actor.profile_path}`
-                    : `https://www.diabetes.ie/wp-content/uploads/2017/02/no-image-available-250x417.png`
+                    : `https://via.placeholder.com/100x150.png?text=Foto+not+found`
                 }
                 alt={actor.title}
               ></img>

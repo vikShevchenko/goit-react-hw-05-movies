@@ -1,52 +1,37 @@
 import React from 'react';
-import { useLocation } from 'react-router-dom';
+import { useSearchParams } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import './Movies.css';
 import { SearchMovie } from 'services/apiPack';
-import { Posts } from '../Posts/Posts';
+import { Posts } from '../../components/Posts/Posts';
+import { SearchForm } from 'components/SearchForm/SearchForm';
+
 
 const Movies = () => {
-  const [inputText, setInputText] = useState('');
-  const [search, setSearch] = useState('');
+  const [searchParams] = useSearchParams(); 
+  const searchFilm = searchParams.get('search')
   const [posts, setPosts] = useState(null);
-  const location = useLocation();
-
-  const hendleSubmit = e => {
-    e.preventDefault();
-    inputText && setSearch(inputText);
-    setInputText('');
-  };
-
-  const hendleChenge = e => {
-    setInputText(e.target.value);
-    setSearch('');
-  };
 
   useEffect(() => {
     async function fachMovies() {
+      if(searchFilm === null) return;
       try {
-        const data = await SearchMovie(search);
+        const data = await SearchMovie(searchFilm);
         setPosts(data.results);
       } catch (error) {
         console.log(error);
       }
     }
     fachMovies();
-  }, [search]);
+  }, [searchFilm]);
 
   return (
     <div className="form">
-      <form>
-        <input
-          type="text"
-          name="name"
-          onChange={hendleChenge}
-          value={inputText}
-        />
-        <button onClick={hendleSubmit}>Search</button>
-      </form>
+     
+      <SearchForm />
       <ul className="formElement">
-        {search && <Posts posts={posts} location={location} />}
+        {searchFilm && 
+        <Posts posts={posts} />}
       </ul>
     </div>
   );

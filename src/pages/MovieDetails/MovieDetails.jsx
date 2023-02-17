@@ -1,15 +1,11 @@
 import { useState, useEffect } from 'react';
 import { useParams, NavLink, Outlet, useLocation } from 'react-router-dom';
 import './MovieDetails.css';
-import PropTypes from 'prop-types';
 import { GetMovieById } from 'services/apiPack';
-
 
 const MovieDetails = () => {
   const [post, setPosts] = useState(null);
   const { id } = useParams();
-  const location = useLocation();
-  const goBack = location.state;
 
   useEffect(() => {
     async function fetchMovie(id) {
@@ -23,7 +19,11 @@ const MovieDetails = () => {
     fetchMovie(id);
   }, [id]);
 
+const location = useLocation()
+const goBack = location.state?.from ?? '/';
+  
   return (
+   
     <div>
       <NavLink className="goBack" to={goBack}>
         {'<Go Back'}
@@ -32,7 +32,11 @@ const MovieDetails = () => {
         <div className="wripper">
           <img
             className="image"
-            src={post.poster_path ?` https://image.tmdb.org/t/p/w500/${post.poster_path}`: `https://www.lincolnelectric.com/-/media/project/website/image-not-found-outlines-41.ashx`}
+            src={
+              post.poster_path
+                ? ` https://image.tmdb.org/t/p/w500/${post.poster_path}`
+                : `https://www.lincolnelectric.com/-/media/project/website/image-not-found-outlines-41.ashx`
+            }
             alt="imagFilm"
           ></img>
           <div className="titles">
@@ -70,10 +74,5 @@ const MovieDetails = () => {
     </div>
   );
 };
-MovieDetails.propTypes = {
-  id: PropTypes.number,
-  location: PropTypes.shape({
-    state: PropTypes.string,
-  }),
-};
+
 export default MovieDetails;

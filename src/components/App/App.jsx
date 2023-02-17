@@ -1,25 +1,15 @@
-import { Routes, Route, NavLink, Outlet } from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
 import { lazy, Suspense } from 'react';
-import './App.css';
 import { TailSpin } from  'react-loader-spinner'
+import { Layout } from './Layout/Layout';
+import './App.css';
 
-const MovieDetails = lazy(() => import('../MovieDetails/MovieDetails'));
+const MovieDetails = lazy(() => import('../../pages/MovieDetails/MovieDetails'));
 const Cast = lazy(() => import('../Cast/Cast'));
 const Reviews = lazy(() => import('../Reviews/Reviews'));
 const Home = lazy(()=> import('pages/Home/Home'));
 const Movies = lazy(()=> import('pages/Movies/Movies'))
 
-function Layout() {
-  return (
-    <>
-      <nav className="nav">
-        <NavLink to="/">Home</NavLink>
-        <NavLink to="/movies">Movies</NavLink>
-      </nav>
-      <Outlet />
-    </>
-  );
-}
 export const App = () => {
   return (
     <div >
