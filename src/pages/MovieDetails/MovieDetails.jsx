@@ -2,8 +2,6 @@ import { useState, useEffect } from 'react';
 import { useParams, NavLink, Outlet, useLocation } from 'react-router-dom';
 import './MovieDetails.css';
 import { GetMovieById } from 'services/apiPack';
-import PropTypes from 'prop-types';
-
 
 const MovieDetails = () => {
   const [post, setPosts] = useState(null);
@@ -61,12 +59,12 @@ const goBack = location.state?.from ?? '/';
         <h4 className="addInfoTitle">Additional information</h4>
         <ul>
           <li>
-            <NavLink to="cast" state={id}>
+            <NavLink to="cast" state={{from: goBack}}> 
               Cast
             </NavLink>
           </li>
           <li>
-            <NavLink to="reviews" state={id}>
+            <NavLink to="reviews" state={{from: goBack}}>
               Reviews
             </NavLink>
           </li>
@@ -78,6 +76,3 @@ const goBack = location.state?.from ?? '/';
 };
 
 export default MovieDetails;
-MovieDetails.propTypes = {
-  id: PropTypes.number
-}

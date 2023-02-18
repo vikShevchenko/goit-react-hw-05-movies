@@ -2,7 +2,6 @@ import React from 'react';
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import './Reviews.css';
-import PropTypes from 'prop-types';
 import { GetReviews } from 'services/apiPack';
 
 const Reviews = () => {
@@ -41,10 +40,6 @@ const Reviews = () => {
       {!data.length && isValid && <h3>Thete is no rewievs</h3>}
     </div>
   );
-};
-
-Reviews.propTypes = {
-  id: PropTypes.number,
 };
 
 export default Reviews;

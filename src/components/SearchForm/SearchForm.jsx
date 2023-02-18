@@ -15,7 +15,7 @@ export const SearchForm = () => {
     <div>
       <form onSubmit={hendleSubmit}>
         <input type="text" name="search" />
-        <input type="submit" value="Search" />
+        <button type="submit" >Search</button>
       </form>
     </div>
   );

@@ -2,8 +2,7 @@ import React from 'react';
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import './Cast.css';
-import PropTypes from 'prop-types';
-import {GetCast} from 'services/apiPack'
+import {GetCast} from 'services/apiPack';
 
 const Cast = () => {
 
@@ -45,9 +44,5 @@ const Cast = () => {
     </div>
   );
 };
-
-Cast.propTypes = {
-  id: PropTypes.number
-}
 
 export default Cast
