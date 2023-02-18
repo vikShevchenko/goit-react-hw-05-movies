@@ -6,7 +6,6 @@ import { GetReviews } from 'services/apiPack';
 
 const Reviews = () => {
   const [data, setData] = useState([]);
-  const [isValid, setIsValid] = useState(false);
   const { id } = useParams();
 
   useEffect(() => {
@@ -14,7 +13,6 @@ const Reviews = () => {
       try {
         const data = await GetReviews(id);
         setData(data.results);
-        setIsValid(true);
       } catch (error) {
         console.log(error);
       }
@@ -24,7 +22,7 @@ const Reviews = () => {
 
   return (
     <div className="revContainer">
-      {data && isValid && (
+      {data && (
         <>
           <h3>Reviews</h3>
           <ul>
@@ -37,7 +35,7 @@ const Reviews = () => {
           </ul>
         </>
       )}
-      {!data.length && isValid && <h3>Thete is no rewievs</h3>}
+      {!data.length && <h3>Thete is no rewievs</h3>}
     </div>
   );
 };
