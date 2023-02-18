@@ -42,7 +42,9 @@ const Reviews = () => {
     </div>
   );
 };
+
 Reviews.propTypes = {
   id: PropTypes.number,
 };
+
 export default Reviews;

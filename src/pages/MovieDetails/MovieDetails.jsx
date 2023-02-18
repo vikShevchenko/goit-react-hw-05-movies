@@ -2,6 +2,8 @@ import { useState, useEffect } from 'react';
 import { useParams, NavLink, Outlet, useLocation } from 'react-router-dom';
 import './MovieDetails.css';
 import { GetMovieById } from 'services/apiPack';
+import PropTypes from 'prop-types';
+
 
 const MovieDetails = () => {
   const [post, setPosts] = useState(null);
@@ -37,7 +39,7 @@ const goBack = location.state?.from ?? '/';
                 ? ` https://image.tmdb.org/t/p/w500/${post.poster_path}`
                 : `https://www.lincolnelectric.com/-/media/project/website/image-not-found-outlines-41.ashx`
             }
-            alt="imagFilm"
+            alt={post.title}
           ></img>
           <div className="titles">
             <h2 className="postTitle">{post.title}</h2>
@@ -76,3 +78,6 @@ const goBack = location.state?.from ?? '/';
 };
 
 export default MovieDetails;
+MovieDetails.propTypes = {
+  id: PropTypes.number
+}

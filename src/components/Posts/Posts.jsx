@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { useLocation } from 'react-router-dom';
+import PropTypes from 'prop-types';
 
 export const Posts = ({ posts }) => {
   const location = useLocation()
@@ -15,3 +16,13 @@ export const Posts = ({ posts }) => {
     </>
   );
 };
+ 
+Posts.propTypes = {
+  posts: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.number,
+      title: PropTypes.string,
+      name: PropTypes.string
+    })
+  )
+}

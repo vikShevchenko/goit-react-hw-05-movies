@@ -1,5 +1,4 @@
 import { useState, useEffect } from 'react';
-//import { useLocation } from 'react-router-dom';
 import { TrendingMovies } from 'services/apiPack';
 import './Home.css';
 import { Posts } from '../../components/Posts/Posts';

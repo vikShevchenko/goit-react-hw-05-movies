@@ -46,6 +46,8 @@ const Cast = () => {
   );
 };
 
-Cast.propTypes = {id: PropTypes.number}
+Cast.propTypes = {
+  id: PropTypes.number
+}
 
 export default Cast
