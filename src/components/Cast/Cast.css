@@ -1,20 +1,21 @@
-.wripperDetals{
-    padding: 20px;
+.wripperDetals {
+  padding: 20px;
 }
-.movieDetalsList{
-    list-style: none;
-    display: grid;
-    flex-direction: column;
-    padding-left: 0px;
-    grid-template-columns: repeat(5,1fr);
-    grid-gap: 20px;
-    width: 670px;
+.movieDetalsList {
+  list-style: none;
+  display: grid;
+  flex-direction: column;
+  padding-left: 0px;
+  grid-template-columns: repeat(5, 1fr);
+  grid-gap: 20px;
+  width: 670px;
+  padding-top: 10px;
 }
-.movieLi{
-    display: flex;
-    flex-direction: column;
-    padding-top: 8px;
+.movieLi {
+  display: flex;
+  flex-direction: column;
+  padding-top: 8px;
 }
-.movieDetalsListFoto{
- width: 100px;
+.movieDetalsListFoto {
+  width: 100px;
 }

@@ -24,12 +24,12 @@ const Reviews = () => {
     <div className="revContainer">
       {data && (
         <>
-          <h3>Reviews</h3>
-          <ul>
+          <h3 className="revTitle">Reviews</h3>
+          <ul className="revList">
             {data.map(info => (
               <li key={info.id}>
-                <h4>{info.author}</h4>
-                <p>{info.content}</p>
+                <h4 className="revSubtitle">{info.author}</h4>
+                <p className="revText">{info.content}</p>
               </li>
             ))}
           </ul>
