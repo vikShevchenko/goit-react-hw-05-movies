@@ -2,9 +2,8 @@ import React from 'react';
 import { useSearchParams } from 'react-router-dom';
 
 export const SearchForm = () => {
-  
   const [, setSearchParams] = useSearchParams([]);
-  const hendleSubmit = e => {
+  const handleSubmit = e => {
     e.preventDefault();
     const form = e.target;
     const query = form.search.value;
@@ -13,9 +12,13 @@ export const SearchForm = () => {
   };
   return (
     <div>
-      <form onSubmit={hendleSubmit}>
-        <input type="text" name="search" />
-        <button type="submit" >Search</button>
+      <form onSubmit={handleSubmit}>
+        <input
+          type="text"
+          name="search"
+          placeholder="What movie are you looking for"
+        />
+        <button type="submit">Search</button>
       </form>
     </div>
   );

@@ -6,15 +6,14 @@ import { SearchMovie } from 'services/apiPack';
 import { Posts } from '../../components/Posts/Posts';
 import { SearchForm } from 'components/SearchForm/SearchForm';
 
-
 const Movies = () => {
-  const [searchParams] = useSearchParams(); 
-  const searchFilm = searchParams.get('search')
+  const [searchParams] = useSearchParams();
+  const searchFilm = searchParams.get('search');
   const [posts, setPosts] = useState(null);
 
   useEffect(() => {
-    async function fachMovies() {
-      if(searchFilm === null) return;
+    async function fetchMovies() {
+      if (searchFilm === null) return;
       try {
         const data = await SearchMovie(searchFilm);
         setPosts(data.results);
@@ -22,17 +21,13 @@ const Movies = () => {
         console.log(error);
       }
     }
-    fachMovies();
+    fetchMovies();
   }, [searchFilm]);
 
   return (
     <div className="form">
-     
       <SearchForm />
-      <ul className="formElement">
-        {searchFilm && 
-        <Posts posts={posts} />}
-      </ul>
+      <ul className="formElement">{searchFilm && <Posts posts={posts} />}</ul>
     </div>
   );
 };
