@@ -1,7 +1,12 @@
-.form{
-    margin: 15px
+.form {
+  padding: 20px 100px;
 }
-.formElement{
-    margin-top: 20px;
-    padding-left: 20px;
+.formElement {
+  padding-top: 20px;
+  padding-left: 0px;
+  margin: 0px;
+  list-style: none;
+}
+.formElement > a {
+  text-decoration: none;
 }

@@ -1,3 +1,19 @@
-.wrapper{
-    margin-left: 30px;
+.wrapper {
+  margin: 0px;
+  padding-left: 100px;
+}
+
+.trendingTitle {
+  margin: 0px;
+  padding: 10px 0px;
+}
+
+.trendingList {
+  margin: 0px;
+  list-style: none;
+  padding: 0px;
+}
+
+.trendingList > a {
+  text-decoration: none;
 }

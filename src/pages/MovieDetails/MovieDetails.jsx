@@ -19,12 +19,11 @@ const MovieDetails = () => {
     fetchMovie(id);
   }, [id]);
 
-const location = useLocation()
-const goBack = location.state?.from ?? '/';
-  
+  const location = useLocation();
+  const goBack = location.state?.from ?? '/';
+
   return (
-   
-    <div>
+    <div className="mainContainer">
       <NavLink className="goBack" to={goBack}>
         {'<Go Back'}
       </NavLink>
@@ -41,12 +40,12 @@ const goBack = location.state?.from ?? '/';
           ></img>
           <div className="titles">
             <h2 className="postTitle">{post.title}</h2>
-            <h4>User scope: {post.popularity}</h4>
+            <h4 className="postScope">User scope: {post.popularity}</h4>
 
-            <h3>Overview</h3>
-            <p>{post.overview}</p>
+            <h3 className="postOwer">Overview</h3>
+            <p className="postText">{post.overview}</p>
 
-            <h3>Genres</h3>
+            <h3 className="postOwer">Genres</h3>
             {post.genres.map(genr => (
               <p className="genresTitle" key={genr.id}>
                 {genr.name}
@@ -59,12 +58,12 @@ const goBack = location.state?.from ?? '/';
         <h4 className="addInfoTitle">Additional information</h4>
         <ul>
           <li>
-            <NavLink to="cast" state={{from: goBack}}> 
+            <NavLink to="cast" state={{ from: goBack }}>
               Cast
             </NavLink>
           </li>
           <li>
-            <NavLink to="reviews" state={{from: goBack}}>
+            <NavLink to="reviews" state={{ from: goBack }}>
               Reviews
             </NavLink>
           </li>

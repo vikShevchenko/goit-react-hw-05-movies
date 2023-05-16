@@ -20,9 +20,9 @@ const Home = () => {
 
   return (
     <div className="wrapper">
-      <h1>Trending today</h1>
-      <ul>
-      <Posts posts={posts} />
+      <h1 className="trendingTitle">Trending today</h1>
+      <ul className="trendingList">
+        <Posts posts={posts} />
       </ul>
     </div>
   );
