@@ -1,6 +1,7 @@
 .wripper {
   display: flex;
   margin-left: -20px;
+  padding-bottom: 20px;
 }
 .button {
   margin-left: 20px;
@@ -12,10 +13,9 @@
 .postTitle {
   color: rgb(8, 7, 7);
   margin: 0px;
-  padding-top: 10px;
 }
 .postScope {
-  padding: 20px 0px;
+  padding: 5px 0px;
   margin: 0px;
 }
 .postOwer {
@@ -38,6 +38,7 @@
   box-shadow: 2px 2px 8px rgba(54, 41, 41, 0.438);
   padding: 10px 80px;
   margin-left: -100px;
+  background-color: #00000040;
 }
 .addInfoTitle {
   margin: 0px;
@@ -56,6 +57,7 @@
 .mainContainer {
   padding-left: 100px;
   padding-top: 5px;
+  background-color: #00000014;
 }
 ul {
   margin: 0px;
