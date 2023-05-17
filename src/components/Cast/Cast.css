@@ -6,7 +6,7 @@
   display: grid;
   flex-direction: column;
   padding-left: 0px;
-  grid-template-columns: repeat(5, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   grid-gap: 20px;
   width: 100%;
   padding-top: 10px;
