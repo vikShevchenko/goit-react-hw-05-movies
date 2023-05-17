@@ -23,8 +23,8 @@ const MovieDetails = () => {
   const goBack = location.state?.from ?? '/';
 
   return (
-    <div>
-      <div className="mainContainer">
+    <>
+      <div className="wripperDetals">
         <NavLink className="goBack" to={goBack}>
           {'<Go Back'}
         </NavLink>
@@ -55,24 +55,24 @@ const MovieDetails = () => {
             </div>
           </div>
         )}
-        <div className="addInfo">
-          <h4 className="addInfoTitle">Additional information</h4>
-          <ul>
-            <li>
-              <NavLink to="cast" state={{ from: goBack }}>
-                Cast
-              </NavLink>
-            </li>
-            <li>
-              <NavLink to="reviews" state={{ from: goBack }}>
-                Reviews
-              </NavLink>
-            </li>
-          </ul>
-        </div>
-        <Outlet />
       </div>
-    </div>
+      <div className="addInfo">
+        <h4 className="addInfoTitle">Additional information</h4>
+        <ul>
+          <li>
+            <NavLink to="cast" state={{ from: goBack }}>
+              Cast
+            </NavLink>
+          </li>
+          <li>
+            <NavLink to="reviews" state={{ from: goBack }}>
+              Reviews
+            </NavLink>
+          </li>
+        </ul>
+      </div>
+      <Outlet />
+    </>
   );
 };
 
