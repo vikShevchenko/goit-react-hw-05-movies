@@ -8,7 +8,7 @@
   padding-left: 0px;
   grid-template-columns: repeat(5, 1fr);
   grid-gap: 20px;
-  width: 670px;
+  width: 100%;
   padding-top: 10px;
 }
 .movieLi {
@@ -17,5 +17,5 @@
   padding-top: 8px;
 }
 .movieDetalsListFoto {
-  width: 100px;
+  width: 100%;
 }

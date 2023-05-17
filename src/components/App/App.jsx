@@ -14,7 +14,7 @@ const Movies = lazy(() => import('pages/Movies/Movies'));
 
 export const App = () => {
   return (
-    <div>
+    <div className='mainWrip'>
       <Suspense className="container" fallback={<TailSpin />}>
         <Routes>
           <Route path="/" element={<Layout />}>

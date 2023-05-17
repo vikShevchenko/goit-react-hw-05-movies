@@ -1,5 +1,5 @@
 .revContainer {
-  width: 660px;
+  width: 100%;
   margin: 0px;
 }
 .revTitle {
@@ -8,7 +8,7 @@
 }
 .revList {
   list-style: none;
-  padding: 10px;
+  padding: 20px;
 }
 .revSubtitle {
   margin: 0px;
